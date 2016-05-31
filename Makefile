@@ -19,7 +19,6 @@ pull:
 
 deploy-prod: pull
 deploy-prod:
-	@git push origin 
 	@echo "\n ---- Deploying production..."
 	@git checkout master
 	@git merge -m "Merge develop" develop
