@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'shifty',
     'social.apps.django_app.default',
     'frontend',
+    'conference',
 ]
 
 CELERYBEAT_SCHEDULE = {
@@ -157,11 +158,11 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_uid',
     'social.pipeline.social_auth.auth_allowed',
     'social.pipeline.social_auth.social_user',
+    'social.pipeline.social_auth.associate_by_email',
     'social.pipeline.user.get_username',
     # If you use backend/provider that don't validate email disable this
     # beacuse it's then insecure more info on
     # http://psa.matiasaguirre.net/docs/use_cases.html#associate-users-by-email
-    'social.pipeline.social_auth.associate_by_email',
     'social.pipeline.user.create_user',
     'social.pipeline.social_auth.associate_user',
     'social.pipeline.social_auth.load_extra_data',
