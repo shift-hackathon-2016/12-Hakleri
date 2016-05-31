@@ -5,13 +5,17 @@ from django.contrib import admin
 from tastypie.api import Api
 from shifty.resources import UserResource
 
+import views
+
 v1_api = Api(api_name='v1')
 v1_api.register(UserResource())
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url('', include('social.apps.django_app.urls', namespace='social')),
+    url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^api/', include(v1_api.urls)),
+    url(r'^$', views.index, name='index'),
+    url(r'^app/$', views.app_view, name='app'),
 ]
 
 if settings.DEBUG:

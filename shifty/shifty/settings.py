@@ -127,6 +127,11 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
+
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',
     'social.pipeline.social_auth.social_uid',
@@ -148,12 +153,14 @@ SOCIAL_AUTH_FACEBOOK_KEY = '1143227352396302'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'd36a23d406c2f1fe5c06d6afd0db45a1'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '201486406508-ton5vojasb8jfgoqm71o60tsr8892r55.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'FXkexDkhW6L4XTYHnaDNb8S7'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '574519565687-jp6sjs7fjfsshrkm42hsdp3cagf76s6o.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'P1-YngQfDdeE8Wc9ma5UE8IC'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
 SOCIAL_AUTH_APPSECRET_PROOF = False
+
+LOGIN_REDIRECT_URL = '/app'
 
 # Set user session lengths to match the expires value from the auth provider.
 SOCIAL_AUTH_SESSION_EXPIRATION = True
