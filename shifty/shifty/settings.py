@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'tastypie',
     'shifty',
     'social.apps.django_app.default',
+    'frontend',
 ]
 
 CELERYBEAT_SCHEDULE = {
