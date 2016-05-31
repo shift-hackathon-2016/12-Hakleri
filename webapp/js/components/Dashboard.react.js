@@ -8,12 +8,59 @@ export default class Dashboard extends Component {
     super(props)
   }
 
+  componentWillMount() {
+    // invoke loader
+
+  }
+
   render() {
     const { dispatch } = this.props
 
+    // if loading, display loader
+
     return (
 		  <div>
-        <p>dashboard</p>
+        {/* Dashboard header*/}
+        <div>
+          <ul>
+            <li><a>Talks</a></li>
+            <li><a>Speakers</a></li>
+          </ul>
+          {/* Conference days*/}
+          <ul>
+            <li><a>31/05</a></li>
+            <li><a>1/6</a></li>
+            <li><a>2/6</a></li>
+            <li><a>3/6</a></li>
+          </ul>
+        </div>
+        {/* Dashboard body*/}
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  aaa
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                DATE
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>
+                  a
+                </td>
+                <td>
+                b
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     )
   }

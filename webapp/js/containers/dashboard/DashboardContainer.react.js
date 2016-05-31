@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { Link, IndexLink } from 'react-router'
 import { connect } from 'react-redux'
 // Components
-import Dashboard from '../components/Dashboard.react';
+import Dashboard from '../../components/Dashboard.react';
 
 export default class Layout extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ Layout.propTypes = {
   children: PropTypes.element,
 }
 
-function selector(state = {}) {
+function dashboardStore(state = {}) {
   console.log(state.dashboard);
 
   return {
@@ -30,5 +30,5 @@ function selector(state = {}) {
   }
 }
 
-export default connect(selector)(Dashboard)
+export default connect(dashboardStore)(Dashboard)
 

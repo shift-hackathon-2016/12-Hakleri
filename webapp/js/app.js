@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import Layout from './layout.react'
 import reducer from './reducers'
-import DashboardContainer from './containers/DashboardContainer.react'
+import DashboardContainer from './containers/dashboard/DashboardContainer.react'
 
 const middleware = [thunk]
 
