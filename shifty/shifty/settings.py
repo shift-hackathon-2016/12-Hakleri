@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
+import sys
 import os
 import dj_database_url
 
@@ -30,8 +31,8 @@ ALLOWED_HOSTS = [
         '127.0.0.1',
         'localhost',
         '52.208.0.105',
-        'confy.kraken.hr',
-        'confy-dev.kraken.hr'
+        'shifty.kraken.hr',
+        'shifty-dev.kraken.hr'
     ]
 
 environment = os.environ.get('ENVIRONMENT', 'LOCAL').upper()
@@ -111,6 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+if 'test' in sys.argv or 'test_coverage' in sys.argv: #Covers regular testing and django-coverage
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 
 AUTHENTICATION_BACKENDS = (
