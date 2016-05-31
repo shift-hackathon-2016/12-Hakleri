@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import actions from '../action-types'
+import types from '../action-types'
 import status from './status'
 
 const appLoadingDefault = true
@@ -9,11 +9,11 @@ function dashboard(state = {
 	talks: [],
 	challenges: [],
 }, action) {
-  if (action.type === actions.requestConferenceDetails) {
+  if (action.type === types.requestConferenceDetails) {
     return Object.assign({}, state, {
       isFetching: true,
     });
-  } else if (action.type === actions.receivedConferenceDetails) {
+  } else if (action.type === types.receivedConferenceDetails) {
 	 return Object.assign({}, state, {
       isFetching: false,
       talks: action.payload.talks,
