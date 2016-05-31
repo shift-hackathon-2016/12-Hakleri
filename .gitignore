@@ -90,3 +90,5 @@ celerybeat-schedule
 venv/
 ENV/
 
+# sqlite
+*.sqlite*
