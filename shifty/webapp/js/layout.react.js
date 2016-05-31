@@ -15,7 +15,7 @@ export default class Layout extends Component {
       <div className="wrap">
         <header className="navigation">
           <div className="logo" >
-            <a href="/#/dashboard">
+            <a href="/">
               <img src="/assets/img/logo2.svg" height="50" width="150" />
             </a>
           </div>
