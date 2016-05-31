@@ -10,9 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
+from __future__ import absolute_import
 import sys
 import os
 import dj_database_url
+
+from celery.schedules import crontab
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,8 +34,8 @@ ALLOWED_HOSTS = [
         '127.0.0.1',
         'localhost',
         '52.208.0.105',
-        'shifty.kraken.hr',
-        'shifty-dev.kraken.hr'
+        'confy.kraken.hr',
+        'confy-dev.kraken.hr'
     ]
 
 environment = os.environ.get('ENVIRONMENT', 'LOCAL').upper()
@@ -57,6 +60,22 @@ INSTALLED_APPS = [
     'shifty',
     'social.apps.django_app.default',
 ]
+
+CELERYBEAT_SCHEDULE = {
+    # crontab(hour=0, minute=0, day_of_week='saturday')
+    'check-events': {
+#        'task': 'shifty.tasks.check_event',
+        'task': 'shifty.celery.periodic',
+        'schedule': crontab()
+    },
+}
+
+BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "redis://localhost"
+
+CELERY_ENABLE_UTC = True
+
+CELERY_IMPORTS = ("shifty.tasks", "shifty.celery")
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
