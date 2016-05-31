@@ -12,8 +12,18 @@ export default class Layout extends Component {
     const { dispatch, isAppLoading } = this.props
 
     return (
-      <div onClick={ () => dispatch(actions.changeAppLoadingState(!isAppLoading)) }>
-        App is loading: { isAppLoading.toString() }
+      <div className="wrap">
+        <header className="navigation">
+          <div className="logo" >
+            <a href="/">
+              <img src="/assets/img/logo2.svg" height="50" width="150" />
+            </a>
+          </div>
+          <nav>
+            <a className="logout">Logout</a>
+          </nav>
+          <div className="clear"></div>
+        </header>
         <div>
           { this.props.children }
         </div>

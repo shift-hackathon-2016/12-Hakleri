@@ -30,8 +30,8 @@ ALLOWED_HOSTS = [
         '127.0.0.1',
         'localhost',
         '52.208.0.105',
-        'shifty.kraken.hr',
-        'shifty-dev.kraken.hr'
+        'confy.kraken.hr',
+        'confy-dev.kraken.hr'
     ]
 
 environment = os.environ.get('ENVIRONMENT', 'LOCAL').upper()
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tastypie',
+    'webapp',
 ]
 
 MIDDLEWARE_CLASSES = [

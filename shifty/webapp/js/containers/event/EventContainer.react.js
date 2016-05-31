@@ -2,46 +2,46 @@ import React, { PropTypes, Component } from 'react'
 import { Link, IndexLink } from 'react-router'
 import { connect } from 'react-redux'
 // Components
-import Dashboard from '../../components/Dashboard.react';
+import EventDetails from '../../components/EventDetail.react';
 import types from './actionTypes';
 import {get} from '../../utils/api';
 
 
-export default class DashboardContainer extends Component {
+export default class EventContainer extends Component {
   constructor(props) {
     super(props)
   }
 
   componentDidMount() {
   	console.log('store');
-    this.getConference();
+    this.getEvent();
   }
 
-  getConference() {
+  getEvent() {
   	const {dispatch} = this.props;
 
-    dispatch({type: types.requestConferenceDetails});
+    dispatch({type: types.requestEventDetails});
   }
 
   render() {
     return (
-		  <Dashboard {...this.props} />
+		  <EventDetails {...this.props} />
     )
   }
 }
 
-DashboardContainer.propTypes = {
+EventContainer.propTypes = {
   children: PropTypes.element,
 }
 
 function selector(state = {}) {
-  const dashboardState = state.dashboard.dashboard;
+  const currentEvent = state.currentEvent;
   console.log(state);
 
   return {
-    talks: dashboardState.talks,
+    event: currentEvent
   };
 }
 
-export default connect(selector)(DashboardContainer)
+export default connect(selector)(EventContainer)
 

@@ -46,7 +46,7 @@ table {
 
 html, body {
   height: 100%;
-  font-family: "Raleway", Arial, sans-serif; }
+  font-family: "Lato", Arial, sans-serif; }
 
 .welcome-page {
   background-color: #D24D57; }
@@ -117,13 +117,34 @@ header.navigation {
     float: right; }
     header.navigation nav a {
       display: inline-block;
-      padding: 1.1rem 2rem;
+      padding: 1.1rem 1rem;
       text-decoration: none;
       color: #eaeaea;
       text-transform: uppercase;
       font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer; }
+      font-weight: 400;
+      cursor: pointer;
+      line-height: 1.2rem; }
+      header.navigation nav a:hover {
+        background-color: #E08283; }
+      header.navigation nav a.logout:before {
+        content: " ";
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+        vertical-align: top;
+        background: url("../img/logout.svg") no-repeat;
+        background-size: cover;
+        margin-right: 0.5rem; }
+      header.navigation nav a.profile:before {
+        content: " ";
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+        vertical-align: top;
+        background: url("../img/user.svg") no-repeat;
+        background-size: cover;
+        margin-right: 0.5rem; }
 
 .page-header {
   background: #eee;
@@ -133,7 +154,8 @@ header.navigation {
   .page-header h1 {
     font-size: 1.8rem;
     color: #2e2e2e;
-    font-weight: 700; }
+    font-weight: 700;
+    text-transform: uppercase; }
   .page-header .meta {
     padding: 1rem 0;
     color: #2e2e2e; }
@@ -163,22 +185,41 @@ header.navigation {
   .page-header .right {
     float: right;
     text-align: right; }
-    .page-header .right a {
+    .page-header .right a.more {
       color: #D24D57;
       border: 1px solid #D24D57;
-      display: block;
+      display: inline-block;
       padding: 0.8rem 2rem;
       text-align: center;
-      margin: 1rem auto;
+      margin: 0 auto 1rem;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 600;
       transition: 0.2s all ease-in-out;
-      cursor: pointer; }
-      .page-header .right a:hover {
+      cursor: pointer;
+      vertical-align: middle; }
+      .page-header .right a.more:hover {
         transform: scale(1.1);
         background-color: #D24D57;
         color: #eaeaea; }
+    .page-header .right a.like {
+      display: inline-block;
+      margin: 0rem 3rem;
+      text-decoration: none;
+      color: inherit;
+      vertical-align: bottom; }
+      .page-header .right a.like svg path {
+        transition: 0.2s all ease-in-out; }
+      .page-header .right a.like svg:hover path {
+        fill: #E08283; }
+      .page-header .right a.like svg.active path {
+        fill: #E08283; }
+      .page-header .right a.like .like-text {
+        margin-top: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #aaa;
+        display: block; }
 
 .wrap {
   height: 100vh;
@@ -251,10 +292,11 @@ header.subheader {
 
 .talk-content .description {
   float: left;
-  padding: 0 1rem;
+  padding: 1rem;
   width: 50%;
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  line-height: 1.5rem; }
   .talk-content .description .inner {
     position: absolute;
     top: 0; }
@@ -263,9 +305,67 @@ header.subheader {
   width: 49%;
   border-left: 1px solid #eee; }
   .talk-content .comments-container header {
-    background: #eee;
-    padding: 1rem; }
+    border-bottom: 2px solid #eee; }
+    .talk-content .comments-container header .left {
+      padding: 1rem 1rem;
+      width: 50%;
+      box-sizing: border-box;
+      float: left;
+      text-transform: uppercase;
+      cursor: pointer; }
+      .talk-content .comments-container header .left.active {
+        background-color: #D24D57;
+        color: #eaeaea; }
+    .talk-content .comments-container header .right {
+      padding: 1rem 1rem;
+      width: 50%;
+      box-sizing: border-box;
+      float: right;
+      text-align: right;
+      cursor: pointer; }
+      .talk-content .comments-container header .right.active {
+        color: #eaeaea;
+        background-color: #D24D57; }
+  .talk-content .comments-container .post-comment {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee; }
+    .talk-content .comments-container .post-comment textarea {
+      border: none;
+      width: 98%;
+      height: 50px;
+      resize: none;
+      padding: 0.3rem;
+      outline: none;
+      font-size: 0.9rem; }
+    .talk-content .comments-container .post-comment button {
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #eaeaea;
+      text-transform: uppercase;
+      background-color: #D24D57;
+      font-weight: 600;
+      cursor: pointer; }
   .talk-content .comments-container .comments {
-    padding: 1rem;
     min-height: 600px;
     overflow: hidden; }
+    .talk-content .comments-container .comments .comment {
+      padding: 1rem;
+      border-bottom: 1px solid #eee; }
+      .talk-content .comments-container .comments .comment .author-name {
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #2e2e2e;
+        margin-right: 1rem; }
+      .talk-content .comments-container .comments .comment .comment-time {
+        display: inline-block;
+        color: #aaa;
+        font-size: 0.8rem; }
+      .talk-content .comments-container .comments .comment .comment-content {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        line-height: 1.1rem; }
