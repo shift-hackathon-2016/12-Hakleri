@@ -8,12 +8,17 @@ export default class Dashboard extends Component {
     super(props)
   }
 
+  redirect(event) {
+    this.context.router.push(`/event/${event.id}`);
+  }
+
   generateEvents(events) {
     const eventRows = [];
+
     if (events) {
       events.map(event => {
         eventRows.push(
-          <tr>
+          <tr onClick={this.redirect(event)}>
             <td>
               {event.start_time}
             </td>
@@ -78,6 +83,10 @@ export default class Dashboard extends Component {
 
 Dashboard.propTypes = {
   children: PropTypes.element,
+}
+
+Dashboard.contextTypes = {
+  router: PropTypes.object.isRequired,
 }
 
 export default Dashboard;

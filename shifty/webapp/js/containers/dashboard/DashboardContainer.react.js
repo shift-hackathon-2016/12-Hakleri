@@ -20,8 +20,7 @@ export default class DashboardContainer extends Component {
   getConference() {
   	const {dispatch} = this.props;
 
-    dispatch({type:types.requestConferenceDetails});
-    // get();
+    dispatch({type: types.requestConferenceDetails});
   }
 
   render() {
