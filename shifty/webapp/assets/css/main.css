@@ -46,7 +46,7 @@ table {
 
 html, body {
   height: 100%;
-  font-family: "Raleway", Arial, sans-serif; }
+  font-family: "Lato", Arial, sans-serif; }
 
 .welcome-page {
   background-color: #D24D57; }
@@ -154,7 +154,8 @@ header.navigation {
   .page-header h1 {
     font-size: 1.8rem;
     color: #2e2e2e;
-    font-weight: 700; }
+    font-weight: 700;
+    text-transform: uppercase; }
   .page-header .meta {
     padding: 1rem 0;
     color: #2e2e2e; }
@@ -184,22 +185,41 @@ header.navigation {
   .page-header .right {
     float: right;
     text-align: right; }
-    .page-header .right a {
+    .page-header .right a.more {
       color: #D24D57;
       border: 1px solid #D24D57;
-      display: block;
+      display: inline-block;
       padding: 0.8rem 2rem;
       text-align: center;
-      margin: 1rem auto;
+      margin: 0 auto 1rem;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 600;
       transition: 0.2s all ease-in-out;
-      cursor: pointer; }
-      .page-header .right a:hover {
+      cursor: pointer;
+      vertical-align: middle; }
+      .page-header .right a.more:hover {
         transform: scale(1.1);
         background-color: #D24D57;
         color: #eaeaea; }
+    .page-header .right a.like {
+      display: inline-block;
+      margin: 0rem 3rem;
+      text-decoration: none;
+      color: inherit;
+      vertical-align: bottom; }
+      .page-header .right a.like svg path {
+        transition: 0.2s all ease-in-out; }
+      .page-header .right a.like svg:hover path {
+        fill: #E08283; }
+      .page-header .right a.like svg.active path {
+        fill: #E08283; }
+      .page-header .right a.like .like-text {
+        margin-top: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #aaa;
+        display: block; }
 
 .wrap {
   height: 100vh;
@@ -333,7 +353,7 @@ header.subheader {
     overflow: hidden; }
     .talk-content .comments-container .comments .comment {
       padding: 1rem;
-      border: 1px solid #eee; }
+      border-bottom: 1px solid #eee; }
       .talk-content .comments-container .comments .comment .author-name {
         display: inline-block;
         vertical-align: baseline;
