@@ -42,4 +42,4 @@ build:
 
 run: #TODO: call build
 	@echo "--- Don't forget to activate virtualenv before!"
-	envdir shifty/.env shifty/manage.py runserver 3000
+	envdir shifty/.env shifty/manage.py runserver 5000
