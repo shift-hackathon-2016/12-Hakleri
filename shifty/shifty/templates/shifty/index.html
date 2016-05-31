@@ -1,5 +1,5 @@
-<body>
-<a href="{% url 'social:begin' 'google-oauth2' %}">Login</a>
+{% extends "shifty/base.html" %}
+{% block content%}
  <section class="welcome-page">
   <div class="wrapper">
     <div class="logo">
@@ -20,4 +20,4 @@
     </div>
   </div>
 </section>
-</body>
+{% endblock%}
