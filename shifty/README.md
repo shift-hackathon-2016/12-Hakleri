@@ -1,3 +1,0 @@
-Shifty
-======
-TODO: write readme :)
