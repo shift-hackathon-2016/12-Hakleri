@@ -8,8 +8,8 @@ export default class Dashboard extends Component {
     super(props)
   }
 
-  redirect(event) {
-    this.context.router.push(`/event/${event.id}`);
+  redirect(e) {
+    // this.context.router.push(`/event/${event.id}`);
   }
 
   generateEvents(events) {
@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
     if (events) {
       events.map(event => {
         eventRows.push(
-          <tr onClick={this.redirect(event)}>
+          <tr onClick={redirect}>
             <td>
               {event.start_time}
             </td>

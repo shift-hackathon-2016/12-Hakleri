@@ -23,22 +23,12 @@ const finalCreateStore = compose(
 
 const store = finalCreateStore(reducer);
 
-let isLoggedIn = false;
-const requireAuth = (nextState, replace) => {
-  isLoggedIn = true;
-  if (!isLoggedIn) {
-    replace('/login');
-  } else {
-    replace('/app');
-  }
-}
-
 const routes = (
   <Provider store={ store }>
     <Router history={ hashHistory }>
-      <Route path="/" component={ Layout } onEnter={requireAuth}>
-      	{/*<IndexRedirect to="app" />*/}
-      	<Route path="app" component={DashboardContainer} />
+      <Route path="/" component={ Layout }>
+        <IndexRedirect to="/dashboard" />
+        <Route path="dashboard" component={DashboardContainer} />
         <Route path="event/:eventId" component={EventContainer} />
         <Route path="login" component={LoginContainer} />
       </Route>
