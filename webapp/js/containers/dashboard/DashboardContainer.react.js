@@ -18,12 +18,12 @@ export default class Layout extends Component {
   getConference() {
   	const {dispatch} = this.props;
 
-    dispatch(createAction({type:types.requestConferenceDetails}));
+    dispatch({type:types.requestConferenceDetails});
   }
 
   render() {
     return (
-		<Dashboard {...this.props}/>
+		  <Dashboard {...this.props}/>
     )
   }
 }
