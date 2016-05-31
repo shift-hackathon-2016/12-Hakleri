@@ -28,7 +28,9 @@ TASTYPIE_DEFAULT_FORMATS = ['json']
 ALLOWED_HOSTS = [
         '127.0.0.1',
         'localhost',
-        '52.208.0.105'
+        '52.208.0.105',
+        'shifty.kraken.hr',
+        'shifty-dev.kraken.hr'
     ]
 
 environment = os.environ.get('ENVIRONMENT', 'LOCAL').upper()
