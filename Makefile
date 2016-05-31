@@ -11,6 +11,17 @@ remotes:
 	@git remote add shifty_dev ssh://deploy@52.208.0.105/home/deploy/shifty_dev.git
 	@git remote add shifty_prod ssh://deploy@52.208.0.105/home/deploy/shifty_prod.git
 
+pull:
+	@git fetch
+	@for branchh in develop master ; do \
+		echo '\n Pulling origin/'$$branch ; \
+		git checkout $$branch ; \
+		git pull --rebase origin $$branch ; \
+	done 
+	@git checkout develop 
+
+
+deploy-prod: pull
 deploy-prod:
 	@echo "\n ---- Deploying production..."
 	@git checkout master
@@ -24,6 +35,7 @@ deploy-prod:
 	@echo "--- Done deploying production! \n"
 	@git checkout develop
 
+deploy-dev: pull
 deploy-dev:
 	@echo "\n ---- Deploying develop..."
 	@echo --- Pushing to origin
