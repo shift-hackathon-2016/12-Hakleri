@@ -18,7 +18,7 @@ module.exports = {
     fallback: [path.join(__dirname, 'node_modules')],
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, '../frontend/static'),
     filename: 'bundle.js',
     pathInfo: true,
     publicPath: '/build/',
