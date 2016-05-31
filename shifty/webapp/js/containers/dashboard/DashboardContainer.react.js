@@ -4,8 +4,10 @@ import { connect } from 'react-redux'
 // Components
 import Dashboard from '../../components/Dashboard.react';
 import types from './actionTypes';
+import {get} from '../../utils/api';
 
-export default class Layout extends Component {
+
+export default class DashboardContainer extends Component {
   constructor(props) {
     super(props)
   }
@@ -19,26 +21,28 @@ export default class Layout extends Component {
   	const {dispatch} = this.props;
 
     dispatch({type:types.requestConferenceDetails});
+    // get();
   }
 
   render() {
     return (
-		  <Dashboard {...this.props}/>
+		  <Dashboard {...this.props} />
     )
   }
 }
 
-Layout.propTypes = {
+DashboardContainer.propTypes = {
   children: PropTypes.element,
 }
 
-function dashboardStore(state = {}) {
-  console.log(state.dashboard);
+function selector(state = {}) {
+  const dashboardState = state.dashboard.dashboard;
+  console.log(state);
 
   return {
-    dashboard: state.dashboard,
-  }
+    talks: dashboardState.talks,
+  };
 }
 
-export default connect(dashboardStore)(Dashboard)
+export default connect(selector)(DashboardContainer)
 

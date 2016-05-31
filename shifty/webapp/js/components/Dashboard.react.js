@@ -8,54 +8,62 @@ export default class Dashboard extends Component {
     super(props)
   }
 
-  render() {
-    const { dispatch } = this.props
+  generateEvents(events) {
+    const eventRows = [];
+    if (events) {
+      events.map(event => {
+        eventRows.push(
+          <tr>
+            <td>
+              {event.start_time}
+            </td>
+            <td>
+              <div className="event-title">
+                {event.name}
+              </div>
+              <div className="event-meta">
+                {event.meta}
+              </div>
+            </td>
+          </tr>        
+        );
+      });
+    }
 
-    // if loading, display loader
+    return eventRows;
+  }
+
+  render() {
+    const { dispatch, talks, conference } = this.props
+    const eventRows = this.generateEvents(talks);
 
     return (
-		  <div>
-        {/* Dashboard header*/}
-        <div>
-          <ul>
-            <li><a>Talks</a></li>
-            <li><a>Speakers</a></li>
-          </ul>
-          {/* Conference days*/}
-          <ul>
-            <li><a>31/05</a></li>
-            <li><a>1/6</a></li>
-            <li><a>2/6</a></li>
-            <li><a>3/6</a></li>
-          </ul>
-        </div>
-        {/* Dashboard body*/}
-        <div>
+      <div>
+        <section className="page-header">
+          <div className="left">
+            <h1>
+              {conference && conference.name}
+            </h1>
+            <div className="meta">
+              <div className="date">place</div>
+              <div className="place">date</div>              
+            </div>
+          </div>
+          <div className="right">
+          </div>
+          <div className="clear">
+          </div>
+        </section>
+        <header>
+        </header>
+        <section className="event-list">
+          {/* Dashboard header*/}
           <table>
-            <thead>
-              <tr>
-                <th>
-                  aaa
-                </th>
-              </tr>
-            </thead>
             <tbody>
-              <tr>
-                DATE
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>
-                  a
-                </td>
-                <td>
-                b
-                </td>
-              </tr>
+              {eventRows}
             </tbody>
           </table>
-        </div>
+        </section>
       </div>
     )
   }
