@@ -28,7 +28,8 @@
     "redux": "^3.5.2",
     "redux-actions": "^0.9.1",
     "redux-thunk": "^2.1.0",
-    "reselect": "^2.5.1"
+    "reselect": "^2.5.1",
+    "urljoin": "^0.1.5"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
