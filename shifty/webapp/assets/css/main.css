@@ -67,7 +67,7 @@ html, body {
         margin: 8rem 0 2rem; }
       .welcome-page section .wrapper .conf-meta {
         font-size: 1.1rem;
-        letter-spacing: 1.5; }
+        letter-spacing: 1px; }
         .welcome-page section .wrapper .conf-meta * {
           padding: 0.2rem 0; }
       .welcome-page section .wrapper .join {
@@ -98,7 +98,7 @@ html, body {
           padding: 0.8rem 0;
           max-width: 250px;
           text-align: center;
-          margin: 2rem auto;
+          margin: 1rem auto;
           text-decoration: none;
           text-transform: uppercase;
           font-weight: 600;
@@ -369,3 +369,50 @@ header.subheader {
         padding: 0.5rem 0;
         font-size: 0.9rem;
         line-height: 1.1rem; }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  background: rgba(210, 77, 87, 0.8); }
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #eee;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5001;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out; }
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s; }
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1); } }
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0); }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
