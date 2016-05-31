@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
     if (events) {
       events.map(event => {
         eventRows.push(
-          <tr onClick={redirect}>
+          <tr onClick={this.redirect}>
             <td>
               {event.start_time}
             </td>
