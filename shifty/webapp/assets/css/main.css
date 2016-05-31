@@ -370,6 +370,35 @@ header.subheader {
         font-size: 0.9rem;
         line-height: 1.1rem; }
 
+.user-search {
+  border: none;
+  background-color: #fff;
+  padding: 0.8rem 2rem 0.8rem 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  min-width: 200px;
+  background: #fff url("../img/search.svg") no-repeat 95% center; }
+
+.user-list table {
+  width: 100%; }
+  .user-list table tr {
+    border-bottom: 1px solid #eee;
+    cursor: pointer; }
+    .user-list table tr:hover {
+      background: #f5f5f5; }
+    .user-list table tr td {
+      padding: 2rem; }
+      .user-list table tr td .event-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #666; }
+    .user-list table tr td:first-of-type {
+      width: 100px;
+      border-right: 1px solid #eee;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.2rem; }
+
 .loader {
   position: fixed;
   top: 0;
