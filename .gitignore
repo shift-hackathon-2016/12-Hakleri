@@ -92,3 +92,5 @@ ENV/
 
 # sqlite
 *.sqlite*
+
+node_modules
