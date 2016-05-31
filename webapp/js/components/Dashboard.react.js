@@ -8,11 +8,6 @@ export default class Dashboard extends Component {
     super(props)
   }
 
-  componentWillMount() {
-    // invoke loader
-
-  }
-
   render() {
     const { dispatch } = this.props
 

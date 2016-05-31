@@ -3,17 +3,27 @@ import { Link, IndexLink } from 'react-router'
 import { connect } from 'react-redux'
 // Components
 import Dashboard from '../../components/Dashboard.react';
+import types from './actionTypes';
 
 export default class Layout extends Component {
   constructor(props) {
     super(props)
   }
 
-  render() {
-    const { dispatch } = this.props
+  componentDidMount() {
+  	console.log('store');
+    this.getConference();
+  }
 
+  getConference() {
+  	const {dispatch} = this.props;
+
+    dispatch(createAction({type:types.requestConferenceDetails}));
+  }
+
+  render() {
     return (
-		<Dashboard />
+		<Dashboard {...this.props}/>
     )
   }
 }
