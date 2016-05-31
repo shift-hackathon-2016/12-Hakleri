@@ -8,6 +8,7 @@ import { Router, Route, IndexRedirect, hashHistory } from 'react-router'
 import Layout from './layout.react'
 import reducer from './reducers'
 import DashboardContainer from './containers/dashboard/DashboardContainer.react'
+import EventContainer from './containers/event/EventContainer.react'
 
 const middleware = [thunk]
 
@@ -27,6 +28,7 @@ const routes = (
       <Route path="/" component={ Layout }>
       	<IndexRedirect to="dashboard" />
       	<Route path="dashboard" component={DashboardContainer} />
+        <Route path="event/:eventId" component={EventContainer} />
       </Route>
     </Router>
   </Provider>
