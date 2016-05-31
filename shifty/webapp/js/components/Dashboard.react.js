@@ -42,14 +42,21 @@ export default class Dashboard extends Component {
         <section className="page-header">
           <div className="left">
             <h1>
-              {conference && conference.name}
+              {conference && conference.name || 'SHIFT split 2016'}
             </h1>
             <div className="meta">
-              <div className="date">place</div>
-              <div className="place">date</div>              
+              <div className="date">31/05 - 03/06/2016</div>
+              <div className="place">Split, Croatia</div>              
             </div>
           </div>
           <div className="right">
+            <a 
+              className="more"
+              href={conference && conference.website || 'http://shift.codeanywhere.com'}
+              target="_blank"              
+            >
+              More info
+            </a>
           </div>
           <div className="clear">
           </div>
