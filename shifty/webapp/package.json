@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline  --config webpack.config.js",
-    "prod": "./node_modules/.bin/webpack -p --progress --profile --colors --config webpack.prod.config.js",
+    "prod": "./node_modules/.bin/webpack -p --define process.env.NODE_ENV='\"production\"' --progress --profile --colors --config webpack.prod.config.js",
     "style": "node_modules/.bin/node-sass --output-style compressed ./sass/main.scss > ./build/main.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "startDebug": "NODE_ENV=development DEBUG=true node server.js"
