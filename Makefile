@@ -24,7 +24,6 @@ deploy-prod:
 	@git merge -m "Merge develop" develop
 	@echo --- Pushing to origin
 	@git push origin
-	@git push origin --tags
 	@echo --- Deploying to server 
 	@git push shifty_prod master:master -f 
 	@echo "--- Done deploying production! \n"
