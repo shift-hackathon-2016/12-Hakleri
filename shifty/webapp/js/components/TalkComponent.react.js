@@ -12,7 +12,7 @@ export default class TalkComponent extends Component {
     const { dispatch } = this.props
 
     return (
-      <section className="talk-component">
+      <section className="talk-content">
          <div className="description">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.</p><br /><p> Fusce orci tellus, feugiat id arcu at, auctor feugiat ipsum. Pellentesque tempus enim eget tellus pretium, in faucibus magna maximus. In tristique, est vitae rhoncus rhoncus, urna odio cursus libero, vitae scelerisque orci felis non orci. Pellentesque vehicula, ex eget gravida sagittis, justo est tincidunt metus, et congue lorem lectus vel lorem. Aenean varius ultricies sem, sit amet egestas orci ornare et. Aliquam quis lacus vitae nunc feugiat rutrum. Nunc interdum mauris rhoncus, varius leo consequat, lobortis neque.</p>
   </div>
@@ -105,7 +105,7 @@ export default class TalkComponent extends Component {
           </div>
           <div className="comment-content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.
-          </div>
+          </div>  
         </div>
     </div>
   </div>

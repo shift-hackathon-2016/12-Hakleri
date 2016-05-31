@@ -9,7 +9,7 @@ export default class Layout extends Component {
   }
 
   render() {
-    const { dispatch, isAppLoading } = this.props
+    const { dispatch, isAppLoading, isLoggedIn } = this.props
 
     return (
       <div className="wrap">
