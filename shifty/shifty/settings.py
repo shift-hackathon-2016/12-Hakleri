@@ -75,7 +75,7 @@ CELERY_RESULT_BACKEND = "redis://localhost"
 
 CELERY_ENABLE_UTC = True
 
-CELERY_IMPORTS = ("shifty.tasks", "shifty.celery")
+CELERY_IMPORTS = ("shifty.celery")
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
