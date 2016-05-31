@@ -37,4 +37,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   debug: true,
+  devServer: {
+    proxy: {
+      "/api/*": "http://localhost:5000",
+      "/static/*": "http://localhost:5000",
+    },
+  },
 };
