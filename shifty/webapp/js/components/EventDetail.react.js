@@ -20,17 +20,16 @@ export default class EventDetail extends Component {
 
   render() {
     const { dispatch, event } = this.props
-    const eventMeta = event && event.meta;
 
     return (
       <div>
         <section className="page-header">
           <div className="left">
             <h1>
-              {event && event.name || 'TALK MOCK'}
+              {event && event.name}
             </h1>
             <div className="meta">
-              {event && event.speaker || 'speaker mock'}
+              <div className="date">{`${event && event.time_start} - ${event && event.time_end}`}</div>
             </div>
           </div>
           <div className="right">
@@ -47,7 +46,7 @@ export default class EventDetail extends Component {
           <div className="clear">
           </div>
         </section>
-        <TalkComponent />
+        <TalkComponent {...this.props} />
       </div>
     )
   }

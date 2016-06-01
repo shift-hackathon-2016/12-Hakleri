@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import EventDetails from '../../components/EventDetail.react';
 import types from './actionTypes';
 import {get} from '../../utils/api';
-
+import effects from '../../effects';
 
 export default class EventContainer extends Component {
   constructor(props) {
@@ -13,14 +13,15 @@ export default class EventContainer extends Component {
   }
 
   componentDidMount() {
-  	console.log('store');
-    this.getEvent();
+  	const eventId = this.props.params.eventId;
+
+    this.getEvent(eventId);
   }
 
-  getEvent() {
+  getEvent(eventId) {
   	const {dispatch} = this.props;
 
-    dispatch({type: types.requestEventDetails});
+    dispatch(effects.event.getEvent(eventId));
   }
 
   render() {
@@ -35,11 +36,11 @@ EventContainer.propTypes = {
 }
 
 function selector(state = {}) {
-  const currentEvent = state.currentEvent;
-  console.log(state);
+  const currentEvent = state.events.selectedEvent;
 
   return {
-    event: currentEvent
+    event: currentEvent,
+    isLoaderVisible: state.events.isLoaderVisible,
   };
 }
 

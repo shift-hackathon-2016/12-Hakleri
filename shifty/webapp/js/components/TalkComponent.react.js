@@ -17,13 +17,13 @@ export default class TalkComponent extends Component {
   }
 
   render() {
-    const { dispatch, activeTabState } = this.props
+    const { dispatch, activeTabState, isLoaderVisible } = this.props
     let activeTab = activeTabState || 'comments';
 
     return (
       <section className="talk-content">
         <div className="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.</p><br /><p> Fusce orci tellus, feugiat id arcu at, auctor feugiat ipsum. Pellentesque tempus enim eget tellus pretium, in faucibus magna maximus. In tristique, est vitae rhoncus rhoncus, urna odio cursus libero, vitae scelerisque orci felis non orci. Pellentesque vehicula, ex eget gravida sagittis, justo est tincidunt metus, et congue lorem lectus vel lorem. Aenean varius ultricies sem, sit amet egestas orci ornare et. Aliquam quis lacus vitae nunc feugiat rutrum. Nunc interdum mauris rhoncus, varius leo consequat, lobortis neque.</p>
+          <p>{this.props.description || 'No description defined...'}</p>
         </div>
         <div className="comments-container">
           <header>
@@ -122,6 +122,18 @@ export default class TalkComponent extends Component {
           }
         </div>
         <div className="clear"></div>
+        {
+          isLoaderVisible &&
+          <section class="loader">
+            <div class="popup">
+               <a href="#" class="close">×</a>
+               <div class="inner">
+                 <h4>Upload file</h4>
+                 <input type="file" />    
+               </div>
+            </div>
+          </section>
+        }
       </section>
     )
   }
@@ -129,6 +141,7 @@ export default class TalkComponent extends Component {
 
 TalkComponent.propTypes = {
   children: PropTypes.element,
+  description: PropTypes.string,
 }
 
 TalkComponent.contextTypes = {
