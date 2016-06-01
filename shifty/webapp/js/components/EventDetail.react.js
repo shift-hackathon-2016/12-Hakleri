@@ -15,8 +15,8 @@ export default class EventDetail extends Component {
     
   }
 
-  handleLikeClicked() {
-    
+  handleLikeClicked(e) {
+      $(e.target).addClass('active').next().text("65 likes");
   }
 
   resize(el){

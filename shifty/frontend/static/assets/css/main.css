@@ -468,3 +468,7 @@ header.subheader {
   50% {
     transform: scale(1);
     -webkit-transform: scale(1); } }
+
+.zeljko {
+  display:none;
+}

@@ -15,6 +15,15 @@ export default class TalkComponent extends Component {
   showQA() {
     console.log('show qa');
   }
+  handleEnter(e){
+    if(e.charCode == 13) {
+      $('.zeljko .comment-content').text(e.target.value);
+      $('.zeljko').slideDown();
+      $('textarea').val('');
+      $('.total-comments').text('3');
+      e.preventDefault();
+    }
+  }
 
   render() {
     const { dispatch, activeTabState, isLoaderVisible } = this.props
@@ -28,19 +37,32 @@ export default class TalkComponent extends Component {
         <div className="comments-container">
           <header>
             <div className={`left ${activeTab === 'comments' ? 'active': ''}`} onClick={this.showComments}>
-              Comments (53)
+              Comments (<span className="total-comments">2</span>)
             </div>
             <div className={`left ${activeTab === 'qunda' ? 'active': ''}`} onClick={this.showQA}>
-              Q &amp; A (17)
+              Q &amp; A (0)
             </div>
             <div className="clear"></div>
           </header>
           <div className="post-comment">
-              <textarea placeholder="Enter comment..."></textarea>
+              <textarea placeholder="Enter comment..." onKeyPress={this.handleEnter} ></textarea>
           </div>
           {
           activeTab === 'comments' &&            
           <div className="comments">
+              <div className="comment zeljko">
+                <div className="comment-meta">
+                  <div className="author-name">
+                    Željko Tadić
+                  </div>
+                  <div className="comment-time">
+                    0 seconds ago
+                  </div>
+                </div>
+                <div className="comment-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.
+                </div>
+              </div>
               <div className="comment">
                 <div className="comment-meta">
                   <div className="author-name">
