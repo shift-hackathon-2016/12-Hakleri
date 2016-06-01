@@ -10,7 +10,7 @@ import reducer from './reducers'
 import DashboardContainer from './containers/dashboard/DashboardContainer.react'
 import EventContainer from './containers/event/EventContainer.react'
 import LoginContainer from './containers/login/LoginContainer.react'
-import UserContainer from './container/user/UserContainer.react';
+import UserContainer from './containers/user/UserContainer.react';
 
 const middleware = [thunk]
 

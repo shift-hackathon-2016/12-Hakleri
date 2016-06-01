@@ -14,7 +14,7 @@ export default class Users extends Component {
     // this.context.router.push(`/event/${event.id}`);
   }
 
-  generateEvents(users || []) {
+  generateUserRows(users = []) {
     const userRows = [];
 
     if (users) {
@@ -32,12 +32,12 @@ export default class Users extends Component {
       });
     }
 
-    return eventRows;
+    return userRows;
   }
 
   render() {
     const { dispatch, users } = this.props
-    const userRows = this.generateUserRow(users);
+    const userRows = this.generateUserRows(users);
 
     return (
       <div>
