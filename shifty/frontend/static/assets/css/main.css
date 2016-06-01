@@ -263,7 +263,9 @@ header.subheader {
       header.subheader .right a:hover {
         color: #eaeaea;
         background-color: #D24D57; }
-
+.event-list {
+  overflow-x:scroll;
+}
 .event-list table {
   width: 100%; }
   .event-list table tr {
@@ -348,7 +350,7 @@ header.subheader {
       font-weight: 600;
       cursor: pointer; }
   .talk-content .comments-container .comments {
-    overflow: scroll; }
+    overflow-y: scroll; }
     .talk-content .comments-container .comments .comment {
       padding: 1rem;
       border-bottom: 1px solid #eee; }
