@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 // Components
 import LikeIcon from './LikeIcon.react';
 import TalkComponent from './TalkComponent.react';
+import eventActions from '../containers/event/actions';
 
 export default class EventDetail extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class EventDetail extends Component {
   }
 
   handleFileUploadeClick() {
-
+    
   }
 
   handleLikeClicked() {
