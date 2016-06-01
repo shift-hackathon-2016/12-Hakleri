@@ -8,9 +8,9 @@ function dashboard(state = {
 	isFetching: false,
 	talks: [
     {
-    name: 'Keynote',
+    name: 'KEYNOTE',
     meta: 'Ivan Burazin',
-    start_time: '11:00',
+    start_time: '10:15',
     id: 1,
     type: 0,
 },
