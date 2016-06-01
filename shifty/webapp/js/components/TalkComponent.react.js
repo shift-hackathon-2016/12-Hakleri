@@ -8,20 +8,29 @@ export default class TalkComponent extends Component {
     super(props)
   }
 
+  showComments() {
+    console.log('show comments');
+  }
+
+  showQA() {
+    console.log('show qa');
+  }
+
   render() {
-    const { dispatch } = this.props
+    const { dispatch, activeTabState } = this.props
+    let activeTab = activeTabState || 'comments';
 
     return (
       <section className="talk-content">
-         <div className="description">
+        <div className="description">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.</p><br /><p> Fusce orci tellus, feugiat id arcu at, auctor feugiat ipsum. Pellentesque tempus enim eget tellus pretium, in faucibus magna maximus. In tristique, est vitae rhoncus rhoncus, urna odio cursus libero, vitae scelerisque orci felis non orci. Pellentesque vehicula, ex eget gravida sagittis, justo est tincidunt metus, et congue lorem lectus vel lorem. Aenean varius ultricies sem, sit amet egestas orci ornare et. Aliquam quis lacus vitae nunc feugiat rutrum. Nunc interdum mauris rhoncus, varius leo consequat, lobortis neque.</p>
-  </div>
+        </div>
   <div className="comments-container">
     <header>
-      <div className="left active">
+      <div className={`left ${activeTab === 'comments' ? 'active': ''}`} onClick={this.showComments}>
         Comments (53)
       </div>
-      <div className="right">
+      <div className={`left ${activeTab === 'qunda' ? 'active': ''}`} onClick={this.showQA}>
         Q &amp; A (17)
       </div>
       <div className="clear"></div>
@@ -109,7 +118,7 @@ export default class TalkComponent extends Component {
         </div>
     </div>
   </div>
-  <div className="clear"></div>
+        <div className="clear"></div>
       </section>
     )
   }
