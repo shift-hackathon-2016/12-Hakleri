@@ -34,8 +34,8 @@ UserContainer.propTypes = {
 }
 
 function selector(state = {}) {
-  const fetchedUsers = state.users;
-  console.log(state);
+  console.log('users');
+  const fetchedUsers = state.users.users;
 
   return {
     users: fetchedUsers,

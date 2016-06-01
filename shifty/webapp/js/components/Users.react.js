@@ -14,18 +14,32 @@ export default class Users extends Component {
     // this.context.router.push(`/event/${event.id}`);
   }
 
+  generateRole(userType) {
+    if (userType === 'judge') {
+      return 'judge';
+    } else if (userType === 'admin') {
+      return 'admin';
+    } else if (userType === 'speaker') {
+      return 'speaker'
+    }
+    return 'Attendee';
+  }
+
   generateUserRows(users = []) {
     const userRows = [];
 
     if (users) {
-      users.map(user => {
+      users.map((user, index) => {
         userRows.push(
-          <tr onClick={this.redirect.bind(null, user)}>
+          <tr onClick={this.redirect.bind(this, user)}>
             <td>
-              Roles
+              #{index}
             </td>
             <td>
-              {user.name}
+              {`${user.first_name} ${user.last_name} (${user.username})`}
+            </td>
+            <td>
+              {this.generateRole(user.user_type)}
             </td>
           </tr>        
         );
@@ -50,6 +64,7 @@ export default class Users extends Component {
             </div>
           </div>
           <div className="right">
+            <input type="text" className="user-search" placeholder="Filter users" />
           </div>
           <div className="clear">
           </div>
