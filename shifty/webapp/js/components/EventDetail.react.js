@@ -10,8 +10,13 @@ export default class EventDetail extends Component {
     super(props)
   }
 
+  handleFileUploadeClick() {
+
+  }
+
   render() {
-    const { dispatch, talks, conference } = this.props
+    const { dispatch, event } = this.props
+    const eventMeta = event && event.meta;
 
     return (
       <div>
@@ -25,13 +30,13 @@ export default class EventDetail extends Component {
             </div>
           </div>
           <div className="right">
-            <a className="like" href="#">
+            <a className="like">
               <LikeIcon />
               <div className="like-text">
-                64 likes  
+                64 likes
               </div>
             </a>
-            <a className="more">
+            <a className="more" onClick={this.handleFileUploadeClick}>
               upload file
             </a>
           </div>
