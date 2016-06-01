@@ -25,6 +25,10 @@ export default class TalkComponent extends Component {
     }
   }
 
+  hideUpload() {
+    $('section.loader').hide();
+  }
+
   render() {
     const { dispatch, activeTabState, isLoaderVisible } = this.props
     let activeTab = activeTabState || 'comments';
@@ -96,18 +100,15 @@ export default class TalkComponent extends Component {
           }
         </div>
         <div className="clear"></div>
-        {
-          isLoaderVisible &&
-          <section class="loader">
-            <div class="popup">
-               <a href="#" class="close">×</a>
-               <div class="inner">
-                 <h4>Upload file</h4>
-                 <input type="file" />    
-               </div>
-            </div>
-          </section>
-        }
+        <section style={{display:'none'}} className="loader">
+          <div className="popup">
+             <a className="close" onClick={this.hideUpload}>×</a>
+             <div className="inner">
+               <h4>Upload file</h4>
+               <input type="file" />    
+             </div>
+          </div>
+        </section>
       </section>
     )
   }
