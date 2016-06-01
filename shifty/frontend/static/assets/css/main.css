@@ -348,8 +348,7 @@ header.subheader {
       font-weight: 600;
       cursor: pointer; }
   .talk-content .comments-container .comments {
-    min-height: 600px;
-    overflow: hidden; }
+    overflow: scroll; }
     .talk-content .comments-container .comments .comment {
       padding: 1rem;
       border-bottom: 1px solid #eee; }

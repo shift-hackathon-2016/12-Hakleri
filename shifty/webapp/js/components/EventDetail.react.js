@@ -18,6 +18,18 @@ export default class EventDetail extends Component {
     
   }
 
+  resize(el){
+   $(el).height($(window).height()  - $(el).offset()['top']) 
+  }
+
+  componentDidUpdate() {
+    resize('.comments');
+  }
+
+  componentDidMount() {
+    resize('.comments');    
+  }
+
   render() {
     const { dispatch, event } = this.props
 
