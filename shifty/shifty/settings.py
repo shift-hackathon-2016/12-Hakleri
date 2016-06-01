@@ -139,8 +139,6 @@ if 'test' in sys.argv or 'test_coverage' in sys.argv: #Covers regular testing an
 
 
 AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookAppOAuth2',
-    'social.backends.facebook.FacebookOAuth2',
     'social.backends.google.GoogleOpenId',
     'social.backends.google.GoogleOAuth2',
     'social.backends.google.GoogleOAuth',
@@ -173,20 +171,24 @@ SOCIAL_AUTH_PIPELINE = (
 
 SOCIAL_AUTH_USER_MODEL = 'shifty.ShiftUser'
 
-#we're generous
-SOCIAL_AUTH_FACEBOOK_KEY = '1143227352396302'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'd36a23d406c2f1fe5c06d6afd0db45a1'
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '574519565687-00l3h1ljl7kkjp61j6adsrlofm24h6no.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'vPZZ_S2y-5occ17YBt9N7wuh'
 
-SOCIAL_AUTH_TWITTER_KEY = 'a8gEA89fiknodtkIAfoZOv6Fg'
-SOCIAL_AUTH_TWITTER_SECRET = 'r4diP3mXvG8Dmd9DAtY3F6DxkKpJ5NcXTIByAWHdYOL1c2Mz25'
+if RUNNING_LOCALLY:
+    SOCIAL_AUTH_TWITTER_KEY = 'a8gEA89fiknodtkIAfoZOv6Fg'
+    SOCIAL_AUTH_TWITTER_SECRET = 'r4diP3mXvG8Dmd9DAtY3F6DxkKpJ5NcXTIByAWHdYOL1c2Mz25'
 
-SOCIAL_AUTH_GITHUB_KEY = '719787a3b89075dddcaf'
-SOCIAL_AUTH_GITHUB_SECRET = 'c9df752598b3f6d3f325ede21f27327ae737012f'
-SOCIAL_AUTH_GITHUB_SCOPE = ['email']
+    SOCIAL_AUTH_GITHUB_KEY = '719787a3b89075dddcaf'
+    SOCIAL_AUTH_GITHUB_SECRET = 'c9df752598b3f6d3f325ede21f27327ae737012f'
+    SOCIAL_AUTH_GITHUB_SCOPE = ['email']
+else:
+    SOCIAL_AUTH_TWITTER_KEY = 'rLxyS3KPIBYCcClRsZ0u6VKDw'
+    SOCIAL_AUTH_TWITTER_SECRET = 'Xcd0bmYAkuc4BbN86U52nfMPG0iF4Aye0CL4KyslIP8eDiioYW'
+
+    SOCIAL_AUTH_GITHUB_KEY = 'f78106486fd9f0caf111'
+    SOCIAL_AUTH_GITHUB_SECRET = 'a990074fe277f8e90184b2bd140858419b6801a8'
+    SOCIAL_AUTH_GITHUB_SCOPE = ['email']
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
