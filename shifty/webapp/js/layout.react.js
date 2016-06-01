@@ -16,7 +16,7 @@ export default class Layout extends Component {
         <header className="navigation">
           <div className="logo" >
             <a href="/">
-              <img src="/assets/img/logo2.svg" height="50" width="150" />
+              <img src="/static/assets/img/logo2.svg" height="50" width="150" />
             </a>
           </div>
           <nav>
