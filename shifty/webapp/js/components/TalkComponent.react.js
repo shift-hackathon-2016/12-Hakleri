@@ -44,10 +44,10 @@ export default class TalkComponent extends Component {
               <div className="comment">
                 <div className="comment-meta">
                   <div className="author-name">
-                    Mario Nikolaus
+                    Bill M. Gates
                   </div>
                   <div className="comment-time">
-                    5 seconds ago
+                    32 minutes ago
                   </div>
                 </div>
                 <div className="comment-content">
@@ -60,63 +60,15 @@ export default class TalkComponent extends Component {
                     
                   </div>
                   <div className="author-name">
-                    Mario Nikolaus
+                    John Doe
                   </div>
                   <div className="comment-time">
-                    5 seconds ago
+                    5 hours ago
                   </div>
                 </div>
                 <div className="comment-content">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.
                 </div>
-              </div>
-              <div className="comment">
-                <div className="comment-meta">
-                  <div className="author-image">
-                    
-                  </div>
-                  <div className="author-name">
-                    Mario Nikolaus
-                  </div>
-                  <div className="comment-time">
-                    5 seconds ago
-                  </div>
-                </div>
-                <div className="comment-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.
-                </div>
-              </div>
-              <div className="comment">
-                <div className="comment-meta">
-                  <div className="author-image">
-                    
-                  </div>
-                  <div className="author-name">
-                    Mario Nikolaus
-                  </div>
-                  <div className="comment-time">
-                    5 seconds ago
-                  </div>
-                </div>
-                <div className="comment-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.
-                </div>
-              </div>
-              <div className="comment">
-                <div className="comment-meta">
-                  <div className="author-image">
-                    
-                  </div>
-                  <div className="author-name">
-                    Mario Nikolaus
-                  </div>
-                  <div className="comment-time">
-                    5 seconds ago
-                  </div>
-                </div>
-                <div className="comment-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem est, efficitur sagittis ultricies nec, auctor id odio. Ut tristique eleifend erat, at cursus metus tristique vel. In hac habitasse platea dictumst. Aliquam venenatis consectetur erat. Aenean viverra erat ac quam consectetur dapibus.
-                </div>  
               </div>
           </div>
           }

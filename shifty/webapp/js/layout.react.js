@@ -21,7 +21,7 @@ export default class Layout extends Component {
           </div>
           <nav>
             <a className="profile" href="/app/#/users">Users</a>
-            <a className="logout">Logout</a>
+            <a className="logout" href="/logout">Logout</a>
           </nav>
           <div className="clear"></div>
         </header>

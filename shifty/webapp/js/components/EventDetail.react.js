@@ -41,7 +41,8 @@ export default class EventDetail extends Component {
               {event && event.name}
             </h1>
             <div className="meta">
-              <div className="date">{`${event && event.time_start || ''} - ${event && event.time_end || ''}` }</div>
+              { /*<div className="date">{`${event && event.time_start || ''} - ${event && event.time_end || ''}` }</div>*/}
+              <div>Ivan Burazin</div>
             </div>
           </div>
           <div className="right">
