@@ -21,6 +21,7 @@ export default class TalkComponent extends Component {
       $('.zeljko').slideDown();
       $('textarea').val('');
       $('.total-comments').text('3');
+      e.preventDefault();
     }
   }
 
