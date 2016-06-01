@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^app/$', views.app_view, name='app'),
     url(r'^api/', include(v1_api.urls)),
+    url(r'^logout/$', 'django.contrib.auth.views.logout',
+                                  {'next_page': '/'})
 ]
 
 if settings.DEBUG:
