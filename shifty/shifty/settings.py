@@ -145,6 +145,8 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.google.GoogleOAuth2',
     'social.backends.google.GoogleOAuth',
     'social.backends.google.GooglePlusAuth',
+    'social.backends.github.GithubOAuth2',
+    'social.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -179,11 +181,11 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '574519565687-00l3h1ljl7kkjp61j6adsrlofm24h6no.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'vPZZ_S2y-5occ17YBt9N7wuh'
 
-SOCIAL_AUTH_TWITTER_KEY = ''
-SOCIAL_AUTH_TWITTER_SECRET = ''
+SOCIAL_AUTH_TWITTER_KEY = 'a8gEA89fiknodtkIAfoZOv6Fg'
+SOCIAL_AUTH_TWITTER_SECRET = 'r4diP3mXvG8Dmd9DAtY3F6DxkKpJ5NcXTIByAWHdYOL1c2Mz25'
 
-SOCIAL_AUTH_GITHUB_KEY = ''
-SOCIAL_AUTH_GITHUB_SECRET = ''
+SOCIAL_AUTH_GITHUB_KEY = '719787a3b89075dddcaf'
+SOCIAL_AUTH_GITHUB_SECRET = 'c9df752598b3f6d3f325ede21f27327ae737012f'
 SOCIAL_AUTH_GITHUB_SCOPE = ['email']
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
