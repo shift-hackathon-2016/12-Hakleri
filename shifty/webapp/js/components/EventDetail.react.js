@@ -59,7 +59,7 @@ export default class EventDetail extends Component {
           <div className="clear">
           </div>
         </section>
-        <TalkComponent {...this.props} />
+        <TalkComponent {...this.props} description={event && event.description} />
       </div>
     )
   }

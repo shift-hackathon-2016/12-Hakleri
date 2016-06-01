@@ -20,7 +20,7 @@ export default class TalkComponent extends Component {
       $('.zeljko .comment-content').text(e.target.value);
       $('.zeljko').slideDown();
       $('textarea').val('');
-      $('.total-comments').text('3');
+      $('.total-comments').text( parseInt( $('.total-comments').text()) + 1 );
       e.preventDefault();
     }
   }
