@@ -96,18 +96,15 @@ export default class TalkComponent extends Component {
           }
         </div>
         <div className="clear"></div>
-        {
-          isLoaderVisible &&
-          <section class="loader">
-            <div class="popup">
-               <a href="#" class="close">×</a>
-               <div class="inner">
-                 <h4>Upload file</h4>
-                 <input type="file" />    
-               </div>
-            </div>
-          </section>
-        }
+        <section class="loader">
+          <div class="popup">
+             <a href="#" class="close">×</a>
+             <div class="inner">
+               <h4>Upload file</h4>
+               <input type="file" />    
+             </div>
+          </div>
+        </section>
       </section>
     )
   }
