@@ -20,7 +20,7 @@ export default class Layout extends Component {
             </a>
           </div>
           <nav>
-            <a className="profile" href="/users">Users</a>
+            <a className="profile" href="/app/#/users">Users</a>
             <a className="logout">Logout</a>
           </nav>
           <div className="clear"></div>
