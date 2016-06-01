@@ -14,6 +14,10 @@ export default class EventDetail extends Component {
 
   }
 
+  handleLikeClicked() {
+    
+  }
+
   render() {
     const { dispatch, event } = this.props
     const eventMeta = event && event.meta;
@@ -30,7 +34,7 @@ export default class EventDetail extends Component {
             </div>
           </div>
           <div className="right">
-            <a className="like">
+            <a className="like" onClick={this.handleLikeClicked}>
               <LikeIcon />
               <div className="like-text">
                 64 likes

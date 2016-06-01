@@ -10,6 +10,7 @@ import reducer from './reducers'
 import DashboardContainer from './containers/dashboard/DashboardContainer.react'
 import EventContainer from './containers/event/EventContainer.react'
 import LoginContainer from './containers/login/LoginContainer.react'
+import UserContainer from './container/user/UserContainer.react';
 
 const middleware = [thunk]
 
@@ -31,6 +32,7 @@ const routes = (
         <Route path="dashboard" component={DashboardContainer} />
         <Route path="event/:eventId" component={EventContainer} />
         <Route path="login" component={LoginContainer} />
+        <Route path="users" component={UserContainer} />
       </Route>
     </Router>
   </Provider>
