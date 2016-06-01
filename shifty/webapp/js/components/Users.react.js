@@ -25,6 +25,18 @@ export default class Users extends Component {
     return 'Attendee';
   }
 
+  resize(el){
+   $(el).height($(window).height()  - $(el).offset()['top']) 
+  }
+
+  componentDidUpdate() {
+    this.resize('.event-list');
+  }
+
+  componentDidMount() {
+    this.resize('.event-list');    
+  }
+
   generateUserRows(users = []) {
     const userRows = [];
 

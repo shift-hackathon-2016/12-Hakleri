@@ -12,6 +12,18 @@ export default class Dashboard extends Component {
     this.context.router.push(`/event/${event.id}`);
   }
 
+  resize(el){
+   $(el).height($(window).height()  - $(el).offset()['top']) 
+  }
+
+  componentDidUpdate() {
+    this.resize('.event-list');
+  }
+
+  componentDidMount() {
+    this.resize('.event-list');    
+  }
+
   generateEvents(events) {
     const eventRows = [];
 

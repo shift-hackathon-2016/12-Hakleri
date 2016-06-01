@@ -23,11 +23,11 @@ export default class EventDetail extends Component {
   }
 
   componentDidUpdate() {
-    resize('.comments');
+    this.resize('.comments');
   }
 
   componentDidMount() {
-    resize('.comments');    
+    this.resize('.comments');    
   }
 
   render() {
