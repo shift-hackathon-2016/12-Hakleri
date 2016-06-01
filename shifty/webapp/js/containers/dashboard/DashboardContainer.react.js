@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Dashboard from '../../components/Dashboard.react';
 import types from './actionTypes';
 import {get} from '../../utils/api';
-
+import effects from '../../effects'
 
 export default class DashboardContainer extends Component {
   constructor(props) {
@@ -19,6 +19,7 @@ export default class DashboardContainer extends Component {
 
   getConference() {
   	const {dispatch} = this.props;
+  	dispatch(effects.conference.get())
 
     dispatch({type: types.requestConferenceDetails});
   }

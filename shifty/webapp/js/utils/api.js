@@ -1,18 +1,17 @@
 const join = require('urljoin')
-const API_ROOT = 'http://hotels.nextuser.com/api/v1/'
-const QS = ''
+const API_ROOT = '/api/v1'
 
-export function get(url, queryString = QS, data) {
+export function get(url, data) {
   return new Promise((resolve, reject) => {
-    $.get({ url: join(API_ROOT + url, queryString), data })
+    $.get({ url: join(API_ROOT, url), data })
       .done(response => resolve(response))
       .fail(err => reject(err))
   })
 }
 
-export function post(url, queryString = QS, data) {
+export function post(url, data) {
   return new Promise((resolve, reject) => {
-    $.post({ url: join(API_ROOT + url, queryString), data })
+    $.post({ url: join(API_ROOT, url), data })
       .done(response => resolve(response))
       .fail(err => reject(err))
   })

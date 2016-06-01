@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import types from '../action-types'
 import status from './status'
+import { handleAction } from 'redux-actions'
 
 const appLoadingDefault = true
 
@@ -108,7 +109,10 @@ function dashboard(state = {
   return state
 }
 
+const conferences = (state, action) => action.type === types.SET_CONFERENCES ? action.payload : []
+
 export default combineReducers({
   dashboard,
+  conferences,
 })
 
