@@ -13,15 +13,13 @@ export default class DashboardContainer extends Component {
   }
 
   componentDidMount() {
-  	console.log('store');
     this.getConference();
   }
 
   getConference() {
   	const {dispatch} = this.props;
-  	dispatch(effects.conference.get())
 
-    dispatch({type: types.requestConferenceDetails});
+  	dispatch(effects.conference.get());
   }
 
   render() {

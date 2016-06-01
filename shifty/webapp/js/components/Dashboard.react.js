@@ -8,8 +8,8 @@ export default class Dashboard extends Component {
     super(props)
   }
 
-  redirect(e) {
-    // this.context.router.push(`/event/${event.id}`);
+  redirect(event) {
+    this.context.router.push(`/event/${event.id}`);
   }
 
   generateEvents(events) {
@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
     if (events) {
       events.map(event => {
         eventRows.push(
-          <tr onClick={this.redirect}>
+          <tr onClick={this.redirect.bind(this, event)}>
             <td>
               {event.start_time}
             </td>
@@ -66,7 +66,18 @@ export default class Dashboard extends Component {
           <div className="clear">
           </div>
         </section>
-        <header>
+        <header className="subheader">
+          <div className="left">
+            <a className="active">Talks</a>
+            <a>Competitions</a>
+          </div>
+          <div className="right">
+            <a className="active">31/05</a>
+            <a>01/06</a>
+            <a>02/06</a>
+            <a>03/06</a>
+          </div>
+          <div className="clear"></div>
         </header>
         <section className="event-list">
           {/* Dashboard header*/}
